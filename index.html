@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Princess - 7th Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="stars"></div>
+    <div id="fireworks"></div>
+
+    <!-- Welcome Section -->
+    <section class="hero" id="home">
+
+        <div class="moon">🌙</div>
+
+        <p class="small-title">A SPECIAL GIFT FROM MOM & DAD</p>
+
+        <h1>
+            Happy Birthday<br>
+            <span>Our Little Princess!</span>
+        </h1>
+
+        <p class="subtitle">
+            Seven years of happiness, love and beautiful memories.
+            You are our brightest star! 💜
+        </p>
+
+        <button onclick="startSurprise()">
+            Open Your Surprise ✨
+        </button>
+
+        <p class="hint">A magical journey is waiting for you...</p>
+
+    </section>
+
+    <!-- Memories -->
+    <section class="section" id="memories">
+
+        <p class="small-title">OUR BEAUTIFUL JOURNEY</p>
+
+        <h2>Our Little Star's Memories 💖</h2>
+
+        <p class="description">
+            Every moment with you is a precious gift.
+        </p>
+
+        <div class="gallery">
+
+            <div class="photo-card">
+                <img src="amra.jpeg" alt="Baby memory">
+                <h3>Our Little Baby 👶</h3>
+                <p>The day our world became brighter.</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="family.jpeg" alt="Family memory">
+                <h3>Beautiful Moments 🌸</h3>
+                <p>Our happiest memories are with you.</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="birthday girl.jpeg" alt="Birthday memory">
+                <h3>Growing Up ✨</h3>
+                <p>Watching you grow is our greatest joy.</p>
+            </div>
+
+        </div>
+
+        <button onclick="showSection('love')">
+            Next Surprise 💗
+        </button>
+
+    </section>
+
+    <!-- Mom and Dad Love -->
+    <section class="section" id="love">
+
+        <p class="small-title">A MESSAGE FROM YOUR PARENTS</p>
+
+        <h2>Mom & Dad's Love ❤️</h2>
+
+        <div class="love-card">
+
+            <div class="heart">💗</div>
+
+            <p>
+                You are the sweetest blessing in our lives.
+                Your smile makes our days brighter and
+                your laughter makes our hearts happier.
+            </p>
+
+            <p>
+                Always remember, our little princess,
+                Mom and Dad will always be there for you.
+            </p>
+
+            <h3>We Love You To The Moon And Back! 🌙</h3>
+
+        </div>
+
+        <button onclick="showSection('game')">
+            Let's Play a Game ⭐
+        </button>
+
+    </section>
+
+    <!-- Star Game -->
+    <section class="section" id="game">
+
+        <p class="small-title">A LITTLE BIRTHDAY GAME</p>
+
+        <h2>Catch 7 Magical Stars ⭐</h2>
+
+        <p class="description">
+            Click the stars to collect your birthday wishes!
+        </p>
+
+        <h3>Stars Collected: <span id="score">0</span> / 7</h3>
+
+        <div class="game-area" id="gameArea"></div>
+
+        <p id="gameMessage"></p>
+
+        <button id="gameNext" onclick="showSection('cake')" disabled>
+            Go To Your Birthday Cake 🎂
+        </button>
+
+    </section>
+
+    <!-- Birthday Cake -->
+    <section class="section" id="cake">
+
+        <p class="small-title">YOUR SPECIAL MOMENT</p>
+
+        <h2>Make A Birthday Wish! 🎂</h2>
+
+        <div class="cake-container">
+
+            <div class="candles" id="candles">
+                <span>🕯️</span>
+                <span>🕯️</span>
+                <span>🕯️</span>
+                <span>🕯️</span>
+                <span>🕯️</span>
+                <span>🕯️</span>
+                <span>🕯️</span>
+            </div>
+
+            <div class="cake">🎂</div>
+
+        </div>
+
+        <p class="description">
+            Close your eyes and make your biggest wish!
+        </p>
+
+        <button onclick="blowCandles()">
+            Blow Out Your Candles! 💨
+        </button>
+
+        <p id="wishMessage"></p>
+
+        <button onclick="showSection('letter')">
+            Read Your Special Letter 💌
+        </button>
+
+    </section>
+
+    <!-- Final Letter -->
+    <section class="section" id="letter">
+
+        <p class="small-title">WITH ALL OUR LOVE</p>
+
+        <h2>To Our Precious Daughter 💜</h2>
+
+        <div class="letter-card">
+
+            <p>My precious little princess,</p>
+
+            <p>
+                Seven years ago, you came into our lives
+                and filled our world with a love we never
+                knew was possible.
+            </p>
+
+            <p>
+                Every smile of yours is our sunshine.
+                Every hug is our greatest treasure.
+            </p>
+
+            <p>
+                No matter how big you grow,
+                you will always be our little girl.
+            </p>
+
+            <p>
+                We may not be able to give you
+                the whole universe, but we promise
+                to love you beyond it.
+            </p>
+
+            <h3>
+                Happy 7th Birthday, Sweetheart! 🎂
+            </h3>
+
+            <h2>Forever and Always,</h2>
+
+            <h2 class="parents">Mom & Dad ❤️</h2>
+
+        </div>
+
+        <button onclick="finalSurprise()">
+            One Last Surprise! 🎆
+        </button>
+
+        <p id="finalMessage"></p>
+
+    </section>
+
+    <footer>
+        Made with endless love by Mom & Dad 💜
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

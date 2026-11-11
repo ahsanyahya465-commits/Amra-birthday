@@ -1,0 +1,583 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #08091e;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(circle at 20% 20%, #513c88, transparent 40%),
+        radial-gradient(circle at 80% 70%, #572b75, transparent 40%),
+        linear-gradient(135deg, #08091e, #19133e);
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; }
+    to { opacity: 1; }
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.moon {
+    font-size: 80px;
+    margin-bottom: 25px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    50% { transform: translateY(-15px); }
+}
+
+.small-title {
+    color: #ffe2a9;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    background: linear-gradient(90deg, #ffb6dc, #d8b9ff, #ffe5a9);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 45px);
+    margin-bottom: 20px;
+    color: #f6d9ff;
+}
+
+.subtitle,
+.description {
+    color: #d4cbe9;
+    max-width: 600px;
+    line-height: 1.9;
+    margin: 0 auto 30px;
+    padding: 0 10px;
+}
+
+button {
+    background: linear-gradient(100deg, #e6b9ff, #ffb6d5);
+    color: #25143e;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+    margin: 10px;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 25px #e5aaff80;
+}
+
+button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.hint {
+    color: #a9a1c5;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.section {
+    display: none;
+    min-height: 100vh;
+    padding: 90px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: appear 1s;
+}
+
+.section.active {
+    display: flex;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: min(950px, 100%);
+    margin: 30px auto;
+}
+
+.photo-card {
+    background: #ffffff12;
+    border: 1px solid #ffffff25;
+    border-radius: 20px;
+    padding: 15px;
+    transition: .3s;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    background: #554477;
+}
+
+.photo-card h3 {
+    margin: 15px 0 8px;
+    color: #ffd5e8;
+}
+
+.photo-card p {
+    color: #c7bfdd;
+    font-size: 13px;
+}
+
+.love-card,
+.letter-card {
+    width: min(650px, 100%);
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+    border-radius: 25px;
+    padding: 35px;
+    margin: 25px auto;
+    line-height: 2;
+    color: #eee4ff;
+}
+
+.heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.2); }
+}
+
+.love-card h3 {
+    color: #ffb6d5;
+    margin-top: 20px;
+}
+
+.game-area {
+    width: min(600px, 100%);
+    height: 280px;
+    border: 1px solid #ffffff35;
+    border-radius: 25px;
+    background: #ffffff09;
+    margin: 25px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-star {
+    position: absolute;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    cursor: pointer;
+    animation: float 1.5s infinite;
+}
+
+.game-star:hover {
+    transform: scale(1.4);
+    box-shadow: none;
+}
+
+.cake-container {
+    margin: 30px;
+}
+
+.candles {
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.cake {
+    font-size: 120px;
+    filter: drop-shadow(0 0 25px #ff9edc);
+}
+
+#gameMessage,
+#wishMessage,
+#finalMessage {
+    color: #ffe2a9;
+    margin: 20px;
+    font-size: 17px;
+}
+
+.letter-card {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+}
+
+.letter-card p {
+    margin-bottom: 20px;
+}
+
+.letter-card h3 {
+    color: #ffb6d5;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.letter-card h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.parents {
+    color: #ffb6d5;
+}
+
+footer {
+    padding: 25px;
+    color: #a9a1c5;
+    font-size: 12px;
+}
+
+.firework {
+    position: fixed;
+    font-size: 30px;
+    pointer-events: none;
+    animation: explode 2s forwards;
+    z-index: 10;
+}
+
+@keyframes explode {
+    0% {
+        opacity: 0;
+        transform: scale(.2);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+@media(max-width:700px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    .photo-card img {
+        height: 250px;
+    }
+
+    .love-card,
+    .letter-card {
+        padding: 23px;
+    }
+
+    .candles {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .section {
+        padding: 70px 25px;
+    }
+
+}
+
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 30px 18px;
+    }
+
+    .moon {
+        font-size: 65px;
+    }
+
+    h1 {
+        font-size: clamp(35px, 10vw, 48px);
+        line-height: 1.25;
+    }
+
+    h2 {
+        font-size: clamp(27px, 7vw, 35px);
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle,
+    .description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    button {
+        max-width: 100%;
+        padding: 13px 22px;
+        font-size: 14px;
+    }
+
+    .section {
+        min-height: 100svh;
+        padding: 65px 16px;
+    }
+
+    /* Photo gallery */
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .photo-card {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .photo-card img {
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Love and Letter Cards */
+
+    .love-card,
+    .letter-card {
+        width: 100%;
+        padding: 22px 18px;
+        border-radius: 20px;
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .letter-card h2 {
+        font-size: 23px;
+    }
+
+    .letter-card h3 {
+        font-size: 19px;
+    }
+
+    .heart {
+        font-size: 55px;
+    }
+
+    /* Star Game */
+
+    .game-area {
+        width: 100%;
+        height: 260px;
+        border-radius: 18px;
+    }
+
+    .game-star {
+        font-size: 27px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    /* Cake */
+
+    .cake {
+        font-size: 95px;
+    }
+
+    .candles {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    /* Footer */
+
+    footer {
+        font-size: 11px;
+        padding: 20px 12px;
+    }
+
+}
+
+
+/* Small Mobile Devices */
+@media screen and (max-width: 380px) {
+
+    h1 {
+        font-size: 33px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .moon {
+        font-size: 55px;
+    }
+
+    .section {
+        padding: 50px 12px;
+    }
+
+    .photo-card img {
+        height: 200px;
+    }
+
+    .love-card,
+    .letter-card {
+        padding: 18px 14px;
+        font-size: 14px;
+    }
+
+    .cake {
+        font-size: 80px;
+    }
+
+    .candles {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 12px 17px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* Landscape Mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .hero {
+        min-height: auto;
+        padding: 35px 15px;
+    }
+
+    .moon {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 38px;
+        margin: 10px 0;
+    }
+
+    .section {
+        min-height: auto;
+        padding: 45px 20px;
+    }
+
+}
+
